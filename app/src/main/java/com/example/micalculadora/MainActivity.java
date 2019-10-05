@@ -20,12 +20,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Double numero2 = 0.0;
     Double resultado;
     String operador;
-
-
+    Double minus;
+    String dato;
     @Override
     public void onClick(View view) {
         TextView pantalla = findViewById(R.id.Etiqueta);
         switch(view.getId()){
+            case R.id.Minus:
+                dato = String.valueOf(pantalla.getText());
+                minus = Double.parseDouble(dato) * -1;
+                pantalla.setText(String.valueOf(minus));
+                break;
             case R.id.Cero:
 
                 pantalla.setText(pantalla.getText() + "0");
